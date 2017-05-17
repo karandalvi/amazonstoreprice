@@ -69,4 +69,4 @@ class AmazonStorePrice:
         :return: float(price cleaned)
         """
         body_content = self.getpage(self.normalizeurl(url), retry_ontemp=retry_ontemp)
-        return self.normalizeprice(body_content.find("span", {"class": "a-color-price"}).contents[0])
+        return self.normalizeprice(body_content.find("span", {"class": "a-size-base a-color-price"}).contents[0])
